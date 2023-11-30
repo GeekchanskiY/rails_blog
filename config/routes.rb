@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   get "/articles/:id", to: "articles#show"
   get "up" => "rails/health#show", as: :rails_health_check
   
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 end
